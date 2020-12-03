@@ -1,9 +1,5 @@
-import SalesSummary from './sales-summary/sales-summary';
-import Projects from './projects/projects';
-import Feeds from './feeds/feeds';
+import SalesSummary from "./sales-summary/sales-summary";
+import Events from "./events/events";
+import Feeds from "./feeds/feeds";
 
-export {
-    SalesSummary,
-    Projects,
-    Feeds
-};
+export { SalesSummary, Events, Feeds };

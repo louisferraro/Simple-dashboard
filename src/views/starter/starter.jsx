@@ -10,7 +10,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
-import { SalesSummary, Projects, Feeds } from "components/dashboard-components";
+import { SalesSummary, Events, Feeds } from "components/dashboard-components";
 
 import img1 from "../../assets/images/big/img1.jpg";
 import img2 from "../../assets/images/big/img2.jpg";
@@ -21,7 +21,7 @@ const Starter = () => {
     <div>
       <Row>
         <Col sm={6} lg={8}>
-          <Projects />
+          <Events />
         </Col>
         <Col sm={6} lg={4}>
           <Feeds />
