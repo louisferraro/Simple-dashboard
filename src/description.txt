@@ -1,0 +1,22 @@
+
+You are asked to implement a web application that solves the aforementioned problems. 
+Any person may register with this application to obtain a user ID and a password. 
+
+There are three user levels:
+Superadmin who creates a profile for an event location
+(name, location, description, area size, capacity of people it can host, pictures, etc.)
+Admin who may host events at a certain location
+Person who uses the application to look up information about the various events and sign up for them.
+
+
+Admin can create events with name, event category, description, time, date, location, contact phone, and contact email address.
+Each superadmin is affiliated with one location, each admin is affiliated with one event. 
+A user can request to create a new event location/event/or to join an existing one (depending upon who accesses this webpage).
+A new event can be created by one or more people, and one of them should be assigned as an administrator. 
+A person can view registered events in their dashboard, by time, location.
+They can retrieve events according to their level of access or scope. 
+A user should be able to see events from all around.
+There are different types of events (social, fundraising, tech talks, etc.). Each event can be either public or private. 
+Public events can be seen by everyone; private events can be seen by the people who have been sent an invitation by the host. 
+Events must be approved by the super admin. 
+After an event has been published, users can add it, remove it, edit comments on the event, as well as rating the event with up to 5 stars.

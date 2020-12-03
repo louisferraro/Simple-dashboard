@@ -34,7 +34,6 @@ const Starter = () => {
           {/*Card-1*/}
           {/*--------------------------------------------------------------------------------*/}
           <Card>
-            <CardImg top width="100%" src={img1} />
             <CardBody>
               <CardTitle>Card title</CardTitle>
               <CardSubtitle>Card subtitle</CardSubtitle>
@@ -51,7 +50,6 @@ const Starter = () => {
           {/*Card-1*/}
           {/*--------------------------------------------------------------------------------*/}
           <Card>
-            <CardImg top width="100%" src={img2} />
             <CardBody>
               <CardTitle>Card title</CardTitle>
               <CardSubtitle>Card subtitle</CardSubtitle>
@@ -68,7 +66,6 @@ const Starter = () => {
           {/*Card-1*/}
           {/*--------------------------------------------------------------------------------*/}
           <Card>
-            <CardImg top width="100%" src={img3} />
             <CardBody>
               <CardTitle>Card title</CardTitle>
               <CardSubtitle>Card subtitle</CardSubtitle>
