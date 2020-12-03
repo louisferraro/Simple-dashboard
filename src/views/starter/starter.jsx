@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
+  Container,
   Card,
   CardImg,
   CardText,
@@ -11,75 +12,92 @@ import {
   Col,
 } from "reactstrap";
 import { SalesSummary, Events, Feeds } from "components/dashboard-components";
-
-import img1 from "../../assets/images/big/img1.jpg";
-import img2 from "../../assets/images/big/img2.jpg";
-import img3 from "../../assets/images/big/img3.jpg";
+import Cards from "../ui-components/cards";
 
 const Starter = () => {
-  return (
-    <div>
-      <Row>
-        <Col sm={6} lg={8}>
-          <Events />
-        </Col>
-        <Col sm={6} lg={4}>
-          <Feeds />
-        </Col>
-      </Row>
+  const [data, setData] = useState([]);
+  // get data for events whenever page loads
+  useEffect(() => {
+    setData([
+      {
+        name: "My Birthday Party",
+        category: "Party",
+        description: "Join me for my birthday celebration",
+        time: "12pm",
+        date: "December 3, 2020",
+        location: "Orlando",
+        phone: "555-1234",
+        email: "test@ucf.edu",
+      },
+      {
+        name: "My Birthday Party",
+        category: "Party",
+        description: "Join me for my birthday celebration",
+        time: "12pm",
+        date: "December 3, 2020",
+        location: "Orlando",
+        phone: "555-1234",
+        email: "test@ucf.edu",
+      },
+      {
+        name: "My Birthday Party",
+        category: "Party",
+        description: "Join me for my birthday celebration",
+        time: "12pm",
+        date: "December 3, 2020",
+        location: "Orlando",
+        phone: "555-1234",
+        email: "test@ucf.edu",
+      },
+    ]);
+  }, []);
 
-      <Row>
-        <Col xs="12" md="4">
-          {/*--------------------------------------------------------------------------------*/}
-          {/*Card-1*/}
-          {/*--------------------------------------------------------------------------------*/}
-          <Card>
-            <CardBody>
-              <CardTitle>Card title</CardTitle>
-              <CardSubtitle>Card subtitle</CardSubtitle>
-              <CardText>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </CardText>
-              <Button>Button</Button>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col xs="12" md="4">
-          {/*--------------------------------------------------------------------------------*/}
-          {/*Card-1*/}
-          {/*--------------------------------------------------------------------------------*/}
-          <Card>
-            <CardBody>
-              <CardTitle>Card title</CardTitle>
-              <CardSubtitle>Card subtitle</CardSubtitle>
-              <CardText>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </CardText>
-              <Button>Button</Button>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col xs="12" md="4">
-          {/*--------------------------------------------------------------------------------*/}
-          {/*Card-1*/}
-          {/*--------------------------------------------------------------------------------*/}
-          <Card>
-            <CardBody>
-              <CardTitle>Card title</CardTitle>
-              <CardSubtitle>Card subtitle</CardSubtitle>
-              <CardText>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </CardText>
-              <Button>Button</Button>
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>
-    </div>
-  );
+  // if theres no events return components that don't show events, otherwise show events
+  if (!data)
+    return (
+      <div>
+        <Row>
+          <Col sm={6} lg={8}>
+            <Events />
+          </Col>
+          <Col sm={6} lg={4}>
+            <Feeds />
+          </Col>
+        </Row>
+      </div>
+    );
+  else
+    return (
+      <div>
+        <Row>
+          <Col sm={6} lg={8}>
+            <Events />
+          </Col>
+          <Col sm={6} lg={4}>
+            <Feeds />
+          </Col>
+        </Row>
+        <Row>
+          {data.map((card, key) => {
+            return (
+              <Col lg={4}>
+                <Cards
+                  key={key}
+                  name={card.name}
+                  category={card.category}
+                  description={card.description}
+                  time={card.time}
+                  date={card.date}
+                  location={card.location}
+                  phone={card.phone}
+                  email={card.email}
+                />
+              </Col>
+            );
+          })}
+        </Row>
+      </div>
+    );
 };
 
 export default Starter;
